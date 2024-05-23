@@ -4,7 +4,7 @@
 
 ## Description
 
-Use this as a starting point to complete the WDD 330 team activity: the SleepOutside web application. It scaffolds out a simple web app with Vite support to bundle up our assets.
+Book Finder or the Better Book Bureau is a book finding site. It allows users to find and mark books as want to read.
 
 ## Prerequisites
 
@@ -21,4 +21,3 @@ Use this as a starting point to complete the WDD 330 team activity: the SleepOut
 - `npm run lint` to run ESLint against your code to find errors.
 - `npm run format` to run Prettier to automatically format your code.
 
-Site URL: https://main--sleepoutside07.netlify.app/
