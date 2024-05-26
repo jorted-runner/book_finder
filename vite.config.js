@@ -14,23 +14,5 @@ export default defineConfig({
         shelf: resolve(__dirname, 'src/shelf/index.html'),
       },
     },
-  },
-  plugins: [
-    {
-      name: 'copy-json-to-dist',
-      writeBundle() {
-        const destDir = resolve(__dirname, 'dist/json');
-
-        // Create the dist/json folder if it doesn't exist
-        if (!fs.existsSync(destDir)) {
-          fs.mkdirSync(destDir, { recursive: true });
-        }
-
-        fs.copyFileSync(
-          resolve(__dirname, 'src/json/tents.json'),
-          resolve(__dirname, 'dist/json/tents.json'),
-        );
-      },
-    },
-  ],
+  }
 });
