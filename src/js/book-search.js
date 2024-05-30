@@ -9,7 +9,8 @@ submitBtn.addEventListener('click', (event) => {
 });
 
 async function fetchBooks(author, title, genre) {
-    const url = `https://goodreads-books.p.rapidapi.com/search?q=${title}&page=1`;
+    const searchString = `${author} ${title} ${genre}`
+    const url = `https://goodreads-books.p.rapidapi.com/search?q=${searchString}&page=1`;
     const options = {
         method: 'GET',
         headers: {
