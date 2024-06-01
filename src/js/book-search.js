@@ -1,4 +1,5 @@
 const submitBtn = document.querySelector('#submit');
+const api_key = import.meta.env.api_key
 
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
@@ -14,7 +15,7 @@ async function fetchBooks(author, title, genre) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '630f9dc8efmsh5debe09cd0afe06p162db7jsn5d6f722a2171',
+            'x-rapidapi-key': api_key,
             'x-rapidapi-host': 'goodreads-books.p.rapidapi.com'
         }
     };
