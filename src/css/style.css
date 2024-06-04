@@ -56,3 +56,21 @@ input[type="text"] {
     width: 30%;
     margin: 0 auto;
 }
+
+/* book card styling */
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.book_card {
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+.book_card h1, h3 {
+    margin: 0;
+}

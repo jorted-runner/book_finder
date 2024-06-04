@@ -43,7 +43,6 @@ async function getCover(id) {
     // URL for the medium-sized cover image
     const url = `https://covers.openlibrary.org/b/id/${id}-M.jpg`;
 
-    // Headers are not necessary for fetching images, so we can omit them
     const options = {
         method: 'GET'
     };
@@ -67,6 +66,7 @@ async function displayResults(result) {
 
     for (const book of result) {
         const bookDiv = document.createElement('div');
+        bookDiv.classList.add('book_card')
         const titleH1 = document.createElement('h1');
         titleH1.textContent = book.title;
         const authorH3 = document.createElement('h3');
