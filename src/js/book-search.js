@@ -78,10 +78,23 @@ async function displayResults(result) {
         } else {
             coverIMG.alt = 'No cover available';
         }
+        const button = document.createElement('button');
+        button.setAttribute('type', 'button');
+        button.classList.add('add_tbr');
+        button.textContent = 'Add to TBR';
+        button.addEventListener('click', function(event) {
+            const parentElement = button.parentElement;
+            const title = parentElement.querySelector('h1').textContent;
+            const author = parentElement.querySelector('h3').textContent;
+            const cover_url = parentElement.querySelector('img').src;
+            console.log(title, author, cover_url);
+            console.log('button pressed');
+        });
 
         bookDiv.appendChild(titleH1);
         bookDiv.appendChild(authorH3);
         bookDiv.appendChild(coverIMG);
+        bookDiv.appendChild(button);
         resultsDiv.appendChild(bookDiv);
     }
 }
