@@ -60,15 +60,16 @@ async function getCover(id) {
 
 
 async function displayResults(result) {
-    console.log(result);
     const resultsDiv = document.querySelector('.results');
     resultsDiv.innerHTML = '';
 
     for (const book of result) {
         const bookDiv = document.createElement('div');
-        bookDiv.classList.add('book_card')
+        bookDiv.classList.add('book_card');
+
         const titleH1 = document.createElement('h1');
         titleH1.textContent = book.title;
+
         const authorH3 = document.createElement('h3');
         authorH3.textContent = book.author_name ? book.author_name.join(', ') : 'Unknown Author';
 
@@ -78,6 +79,7 @@ async function displayResults(result) {
         } else {
             coverIMG.alt = 'No cover available';
         }
+
         const button = document.createElement('button');
         button.setAttribute('type', 'button');
         button.classList.add('add_tbr');
@@ -87,8 +89,17 @@ async function displayResults(result) {
             const title = parentElement.querySelector('h1').textContent;
             const author = parentElement.querySelector('h3').textContent;
             const cover_url = parentElement.querySelector('img').src;
-            console.log(title, author, cover_url);
-            console.log('button pressed');
+            const book_json = {
+                'book': {
+                    'title': title,
+                    'author': author,
+                    'cover_url': cover_url
+                }
+            };
+            let tbr_books = JSON.parse(localStorage.getItem('tbr_books')) || [];
+            tbr_books.push(book_json);
+            localStorage.setItem('tbr_books', JSON.stringify(tbr_books));
+            alert('Book Successfully added to TBR Shelf!');
         });
 
         bookDiv.appendChild(titleH1);
